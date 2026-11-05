@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+# Service worker a manifest se nesmí cachovat, aby se aktualizace projevily hned
+[[headers]]
+  for = "/firebase-messaging-sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache"
