@@ -156,7 +156,7 @@ const Play = ({className}) => <svg className={className} xmlns="http://www.w3.or
                 blockedDesc: "Prohlížeč zablokoval spojení. Klikni na Odhalit a zkus další.",
                 guessArtistPH: "Tipni interpreta...",
                 guessTrackPH: "Tipni název skladby...",
-                earnedPts: (pts) => `Získáno: +${pts} bodů!`,
+                earnedPts: (pts) => `Získáno: +${pts} ${pts === 1 ? 'bod' : (pts >= 2 && pts <= 4 ? 'body' : 'bodů')}!`,
                 ptsSymbol: "b",
                 wrong: "Špatně, 0 bodů",
                 scorePop: "Skóre popularity:",
@@ -266,6 +266,7 @@ const Play = ({className}) => <svg className={className} xmlns="http://www.w3.or
                 errDl: "Chyba stahování z hudební databáze. Obnov stránku.",
                 errGen: "Při vytváření hry nastala chyba.",
                 errSelf: "Nemůžeš vyzvat sám sebe!",
+                errNoSelection: "Nejdřív v nastavení výzvy vyber interpreta, žánr nebo dekádu.",
                 errFound: (email) => `Hráč "${email}" nebyl nalezen. Zkontroluj překlepy.`,
                 msgGen: (count) => `Generuji ${count} hitů pro tento souboj...`,
                 msgFind: (email) => `Hledám hráče ${email}...`,
@@ -454,6 +455,7 @@ genres: {
                 errDl: "Error downloading from music database. Refresh the page.",
                 errGen: "Error occurred while creating the game.",
                 errSelf: "You cannot challenge yourself!",
+                errNoSelection: "First choose an artist, genre or decade in the challenge settings.",
                 errFound: (email) => `Player "${email}" not found. Check for typos.`,
                 msgGen: (count) => `Generating ${count} hits for this battle...`,
                 msgFind: (email) => `Searching for player ${email}...`,
@@ -531,7 +533,7 @@ sk: {
                 blockedDesc: "Prehliadač zablokoval spojenie. Klikni na Odhaliť a skús ďalšiu.",
                 guessArtistPH: "Tipni interpreta...",
                 guessTrackPH: "Tipni názov skladby...",
-                earnedPts: (pts) => `Získané: +${pts} bodov!`,
+                earnedPts: (pts) => `Získané: +${pts} ${pts === 1 ? 'bod' : (pts >= 2 && pts <= 4 ? 'body' : 'bodov')}!`,
                 ptsSymbol: "b",
                 wrong: "Zle, 0 bodov",
                 scorePop: "Skóre popularity:",
@@ -593,6 +595,7 @@ sk: {
                 errDl: "Chyba sťahovania z hudobnej databázy. Obnov stránku.",
                 errGen: "Pri vytváraní hry nastala chyba.",
                 errSelf: "Nemôžeš vyzvať sám seba!",
+                errNoSelection: "Najprv v nastavení výzvy vyber interpreta, žáner alebo dekádu.",
                 errFound: (email) => `Hráč "${email}" nebol nájdený. Skontroluj preklepy.`,
                 msgGen: (count) => `Generujem ${count} hitov pre tento súboj...`,
                 msgFind: (email) => `Hľadám hráča ${email}...`,
@@ -1934,7 +1937,7 @@ mn: {
                 he: ["חניך", "מאזין", "שחקן מועדון", "חובב מוזיקה", "DJ מתחיל", "שדרן רדיו", "מומחה קצב", "ג'וקבוקס מהלך", "מבקר מוזיקה", "מאסטר מלודיה", "אנציקלופדיה מהלכת", "אל המוזיקה"],
                 th: ["เด็กฝึกงาน", "ผู้ฟัง", "ผู้เล่นคลับ", "ผู้หลงใหลในเสียงดนตรี", "ดีเจมือใหม่", "ผู้จัดรายการวิทยุ", "ผู้เชี่ยวชาญด้านจังหวะ", "ตู้เพลงเดินได้", "นักวิจารณ์ดนตรี", "ปรมาจารย์ด้านทำนอง", "สารานุกรมเดินได้", "เทพเจ้าแห่งเสียงดนตรี"],
                 nl: ["Leerling", "Luisteraar", "Clubspeler", "Muziekliefhebber", "Beginnende DJ", "Radiospreker", "Ritme-expert", "Wandelende Jukebox", "Muziekcriticus", "Melodiemeester", "Wandelende Encyclopedie", "God van de Muziek"],
-                ms: per => ["Perantis", "Pendengar", "Pemain Kelab", "Peminat Muzik", "DJ Baru", "Penyampai Radio", "Pakar Irama", "Jukebox Berjalan", "Pengkritik Muzik", "Pakar Melodi", "Ensiklopedia Berjalan", "Dewa Muzik"],
+                ms: ["Perantis", "Pendengar", "Pemain Kelab", "Peminat Muzik", "DJ Baru", "Penyampai Radio", "Pakar Irama", "Jukebox Berjalan", "Pengkritik Muzik", "Pakar Melodi", "Ensiklopedia Berjalan", "Dewa Muzik"],
                 tl: ["Mag-aaral", "Tagapakinig", "Manlalaro ng Club", "Mahilig sa Musika", "Baguhang DJ", "Tagapagsalita sa Radyo", "Eksperto sa Ritmo", "Naglalakad na Jukebox", "Kritiko ng Musika", "Guro ng Melodiya", "Naglalakad na Ensiklopedya", "Diyos ng Musika"],
                 pa: ["ਸਿਖਿਆਰਥੀ", "ਸਰੋਤਾ", "ਕਲੱਬ ਖਿਡਾਰੀ", "ਸੰਗੀਤ ਪ੍ਰੇਮੀ", "ਨਵਾਂ DJ", "ਰੇਡੀਓ ਸਪੀਕਰ", "ਤਾਲ ਮਾਹਰ", "ਚਲਦਾ ਜੂਕਬਾਕਸ", "ਸੰਗੀਤ ਆਲੋਚਕ", "ਧੁਨ ਮਾਸਟਰ", "ਚਲਦਾ ਐਨਸਾਈਕਲੋਪੀਡੀਆ", "ਸੰਗੀਤ ਦਾ ਰੱਬ"],
                 kk: ["Шәкірт", "Тыңдаушы", "Клуб Ойыншысы", "Музыка Әуесқойы", "Жаңадан бастаушы DJ", "Радио Жүргізуші", "Ырғақ Эксперті", "Жүретін Jukebox", "Музыка Сыншысы", "Мелодия Шебері", "Жүретін Энциклопедия", "Музыка Құдайы"],
@@ -6358,8 +6361,11 @@ const GENRES_DATA = {
 
         const cleanString = (str) => {
             if (!str) return "";
-            let cleaned = str.split('(')[0].split('[')[0].split(' - ')[0].trim();
-            return cleaned.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, ""); 
+            // Závorky odstraníme celé (dřív se řezalo u první závorky, takže "(I Can't Get No) Satisfaction" skončilo prázdné)
+            let cleaned = str.replace(/\([^)]*\)|\[[^\]]*\]/g, ' ').split(' - ')[0].trim() || str;
+            // Kromě latinky ponecháme i písmena dalších písem (azbuka, řečtina, hebrejština, arabština, dévanágarí, thajština, hangul, kana, CJK...)
+            return cleaned.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                .replace(/[^a-z0-9\u0370-\u03ff\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f\u1100-\u11ff\u1200-\u137f\u3040-\u30ff\u3130-\u318f\u4e00-\u9fff\uac00-\ud7af]/g, "");
         };
 
         const getLevenshteinDistance = (a, b) => {
@@ -6384,6 +6390,8 @@ const GENRES_DATA = {
             if (!guess || !guess.trim()) return false;
             const normGuess = cleanString(guess);
             const normActual = cleanString(actual);
+            // Prázdný řetězec po očištění (např. jen interpunkce) nesmí nikdy "trefit" odpověď
+            if (!normGuess || !normActual) return guess.trim().toLowerCase() === (actual || '').trim().toLowerCase();
             if (normGuess === normActual) return true;
             if (normActual.includes(normGuess) && normGuess.length > 3) return true;
             const distance = getLevenshteinDistance(normGuess, normActual);
@@ -6411,10 +6419,21 @@ const GENRES_DATA = {
             });
         };
 
-        const normDeezerName = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9Ѐ-ӿͰ-Ͽ぀-ヿ一-鿿가-힯]+/g, ' ').trim();
+        const normDeezerName = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\u0370-\u03ff\u0400-\u04ff\u0590-\u05ff\u0600-\u06ff\u0900-\u097f\u0e00-\u0e7f\u1100-\u11ff\u1200-\u137f\u3040-\u30ff\u3130-\u318f\u4e00-\u9fff\uac00-\ud7af]+/g, ' ').trim();
 
         // Cache: jméno interpreta -> Deezer ID (šetří požadavky)
         const deezerArtistIdCache = {};
+
+        // Interpreti z našich seznamů (normalizovaně) – u nich nepoužíváme filtr "nehudebních" stop,
+        // aby neprošel omylem např. Soundgarden (obsahuje "sound") nebo "November Rain" (obsahuje "rain").
+        const KNOWN_ARTISTS_NORM = new Set(ALL_ARTISTS.map(a => normDeezerName(a)));
+        const isJunkTrack = (artistName, title) => {
+            const a = (artistName || '').toLowerCase();
+            const t = (title || '').toLowerCase();
+            if (a.includes('karaoke') || t.includes('karaoke')) return true;
+            if (KNOWN_ARTISTS_NORM.has(normDeezerName(artistName))) return false;
+            return a.includes('tribute') || a.includes('cover') || a.includes('deezer') || a.includes('sound') || t.includes('sleep') || t.includes('rain') || t.includes('noise');
+        };
 
         const fetchArtistTopTracks = async (artistName) => {
             const key = normDeezerName(artistName);
@@ -6422,7 +6441,7 @@ const GENRES_DATA = {
             if (!artistId) {
                 const res = await deezerJsonp(`search/artist?q=${encodeURIComponent(artistName)}&limit=10`);
                 const list = (res && res.data) || [];
-                const exact = list.find(a => normDeezerName(a.name) === key);
+                const exact = key ? list.find(a => normDeezerName(a.name) === key) : list.find(a => (a.name || '').toLowerCase() === artistName.toLowerCase());
                 const chosen = exact || list[0];
                 if (!chosen) return [];
                 artistId = chosen.id;
@@ -6444,7 +6463,7 @@ const GENRES_DATA = {
             const albumMatch = term.match(/album:"([^"]+)"/i);
             const trackMatch = term.match(/track:"([^"]+)"/i);
             const artistKey = normDeezerName(artistName);
-            const sameArtist = (t) => t && t.artist && normDeezerName(t.artist.name) === artistKey;
+            const sameArtist = (t) => t && t.artist && (artistKey ? normDeezerName(t.artist.name) === artistKey : t.artist.name.toLowerCase() === artistName.toLowerCase());
 
             if (!albumMatch && !trackMatch) {
                 const top = await fetchArtistTopTracks(artistName);
@@ -6453,16 +6472,23 @@ const GENRES_DATA = {
                 return { data: ((res && res.data) || []).filter(sameArtist) };
             }
 
+            // Dotaz na konkrétní album/skladbu (data dekád): přednostně vracíme skladby, jejichž album/název odpovídá,
+            // nikdy ale ne nejznámější hity interpreta celkově (ty by do hry podle dekády přinesly skladby z jiné doby).
             const extra = albumMatch ? albumMatch[1] : trackMatch[1];
+            const extraKey = normDeezerName(extra);
+            const looseEq = (title) => {
+                const n = normDeezerName(title);
+                if (!n || !extraKey) return false;
+                // Deezer často přidává "(Remastered)", "- Deluxe Edition" apod.
+                return n === extraKey || (extraKey.length >= 4 && n.startsWith(extraKey + ' ')) || (extraKey.length >= 6 && n.includes(extraKey));
+            };
             const res = await deezerJsonp(`search?q=${encodeURIComponent(artistName + ' ' + extra)}&limit=100`);
             const byArtist = ((res && res.data) || []).filter(sameArtist);
-            if (albumMatch) {
-                const albumKey = normDeezerName(albumMatch[1]);
-                const byAlbum = byArtist.filter(t => t.album && normDeezerName(t.album.title) === albumKey);
-                if (byAlbum.length > 0) return { data: byAlbum };
-            }
-            if (byArtist.length > 0) return { data: byArtist };
-            return { data: await fetchArtistTopTracks(artistName) };
+            const matched = albumMatch
+                ? byArtist.filter(t => t.album && looseEq(t.album.title))
+                : byArtist.filter(t => looseEq(t.title));
+            // Když album/skladbu nenajdeme ani volněji, vezmeme skladby interpreta z tohoto hledání (bez jeho hitů z jiných let)
+            return { data: matched.length > 0 ? matched : byArtist };
         };
 
         // --- SINGLEPLAYER KOMPONENTA (Trénink) ---
@@ -6597,15 +6623,17 @@ const GENRES_DATA = {
                         
                         const validSongs = (data.data || []).filter(track => {
                             if (!track || !track.preview || track.type !== 'track' || !track.artist || !track.artist.name || !track.title) return false;
-                            if (forbiddenCharsPattern.test(track.artist.name) || forbiddenCharsPattern.test(track.title)) return false;
+                            const isArtistMode = trainingMode === 'artist' && selectedArtist;
+                            // U konkrétně vybraného interpreta nevyřazujeme znaky jako å/ł (jinak by Måneskin či Dawid Podsiadło nikdy nehráli)
+                            if (!isArtistMode && (forbiddenCharsPattern.test(track.artist.name) || forbiddenCharsPattern.test(track.title))) return false;
                             
                             const artistName = track.artist.name.toLowerCase();
                             const titleName = track.title.toLowerCase();
                             
-                            if (artistName.includes('karaoke') || artistName.includes('tribute') || titleName.includes('karaoke') || artistName.includes('cover') || artistName.includes('deezer') || artistName.includes('sound') || titleName.includes('sleep') || titleName.includes('rain') || titleName.includes('noise')) return false;
+                            if (isJunkTrack(track.artist.name, track.title)) return false;
                             
-                            if (trainingMode === 'artist' && selectedArtist) {
-                                if (artistName !== selectedArtist.toLowerCase()) return false;
+                            if (isArtistMode) {
+                                if (normDeezerName(track.artist.name) !== normDeezerName(selectedArtist)) return false;
                             } else {
                                 if (targetCategory === 'EN') {
                                     if (nonEnglishCharsPattern.test(track.artist.name) || nonEnglishCharsPattern.test(track.title)) return false;
@@ -6854,7 +6882,14 @@ const GENRES_DATA = {
                         <button onClick={handleSaveSettings} disabled={trainingMode === 'artist' && !selectedArtist} className={`w-full py-4 rounded-xl font-bold text-lg transition-all ${trainingMode === 'artist' && !selectedArtist ? 'bg-white/5 text-slate-500 cursor-not-allowed' : 'bg-gradient-to-r from-pink-500 to-indigo-500 text-white shadow-lg hover:scale-105'}`}>
                             {t.saveAndPlay}
                         </button>
-                        <button onClick={() => setSetupMode(false)} className="w-full mt-3 py-3 rounded-xl font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all text-sm">
+                        <button onClick={() => {
+                            // Zrušit = vrátit neuložené změny (jinak by se rozpracované nastavení tiše použilo pro další skladby)
+                            const savedArtist = localStorage.getItem('musicQuiz_sp_artist') || "";
+                            setTrainingMode(localStorage.getItem('musicQuiz_sp_mode') || 'random');
+                            setSelectedArtist(savedArtist); setSearchInput(savedArtist);
+                            setPreviewDuration(Number(localStorage.getItem('musicQuiz_sp_duration')) || 30);
+                            setSetupMode(false);
+                        }} className="w-full mt-3 py-3 rounded-xl font-bold text-slate-400 hover:text-white hover:bg-white/5 transition-all text-sm">
                             {t.cancel}
                         </button>
                     </div>
@@ -7164,7 +7199,7 @@ const GENRES_DATA = {
     const oppRank = getRanksMP(appLang).reverse().find(r => oppWins >= r.wins) || getRanksMP(appLang)[0];
     
     // Získání vlajky
-    const oppProfileInfo = allProfiles.find(p => p.email.toLowerCase() === opponentEmail.toLowerCase());
+    const oppProfileInfo = allProfiles.find(p => p.email?.toLowerCase() === opponentEmail?.toLowerCase());
     const oppCountryObj = COUNTRIES.find(c => c.code === oppProfileInfo?.country);
 
     return (
@@ -7323,7 +7358,7 @@ const GENRES_DATA = {
                                     const isMe = player.email.toLowerCase() === myEmail?.toLowerCase();
                                     
                                     // PŘIDÁNO: Najdeme profil hráče a jeho vlajku
-                                    const playerProfile = allProfiles.find(p => p.email.toLowerCase() === player.email.toLowerCase());
+                                    const playerProfile = allProfiles.find(p => p.email?.toLowerCase() === player.email.toLowerCase());
                                     const playerCountryObj = COUNTRIES.find(c => c.code === playerProfile?.country);
 
                                     return (
@@ -7766,8 +7801,10 @@ useEffect(() => {
                         // Kontrola: Pokud nemá vybranou zemi, pošli ho do edit profilu
                         if (!docSnap.data().country || docSnap.data().country === "") {
                             setView('edit_profile');
-                        } else if (view === 'login' || view === 'loading') {
-                            setView('dashboard');
+                        } else {
+                            // Funkční aktualizace: listener jinak vidí zastaralou hodnotu `view` z doby přihlášení
+                            // a při každé změně profilu (např. z jiného zařízení) by hráče vyhodil z rozehrané hry.
+                            setView(v => (v === 'login' || v === 'loading') ? 'dashboard' : v);
                         }
                     } else {
                         localStorage.removeItem(`musicQuiz_profileId_${appId}`);
@@ -7879,7 +7916,7 @@ useEffect(() => {
                     };
                     localStorage.setItem(`musicQuiz_active_game_${currentGame.id}_${myProfile.email}`, JSON.stringify(stateToSave));
                 }
-            }, [currentRound, localScore, localGuesses, isRevealed, artistGuess, songGuess, guessResult, currentGame, myProfile, view, selectedChoice, eliminatedChoice]);
+            }, [currentRound, localScore, localGuesses, isRevealed, artistGuess, songGuess, guessResult, currentGame, myProfile, view, selectedChoice, eliminatedChoice, hintsRemaining, hintUsed]);
 
             // NOVÝ USEEFFECT: SLEDOVÁNÍ KONKRÉTNÍ HRY V RESULTS VIEW (live update odpovědí soupeře)
             useEffect(() => {
@@ -7997,8 +8034,13 @@ const toggleNotifications = async () => {
                             setIsLoading(false);
                             return;
                         }
+                        // Při přihlášení k existujícímu účtu (např. na novém zařízení) nepřepisujeme uložený avatar ani zemi;
+                        // doplníme jen to, co v profilu chybí. Avatar a zemi lze změnit v úpravě profilu.
+                        const ex = existing.data();
                         await api.updateDoc(api.doc(db, 'artifacts', appId, 'public', 'data', 'profiles', existing.id), {
-    avatar: selectedAvatar, pin: loginPin, country: selectedCountry
+                            avatar: ex.avatar || selectedAvatar,
+                            pin: ex.pin || loginPin,
+                            country: ex.country || selectedCountry
                         });
                         localStorage.setItem(`musicQuiz_profileId_${appId}`, existing.id);
                         setActiveProfileId(existing.id);
@@ -8087,6 +8129,8 @@ const toggleNotifications = async () => {
                     'gr': ARTISTS_GR.map(a => a.toLowerCase()), 'ro': ARTISTS_RO.map(a => a.toLowerCase()),
                     'bg': ARTISTS_BG.map(a => a.toLowerCase()), 'hr': ARTISTS_HR.map(a => a.toLowerCase()),
                     'rs': ARTISTS_RS.map(a => a.toLowerCase()), 'si': ARTISTS_SI.map(a => a.toLowerCase()),
+                    'ba': ARTISTS_BA.map(a => a.toLowerCase()), 'mk': ARTISTS_MK.map(a => a.toLowerCase()),
+                    'me': ARTISTS_ME.map(a => a.toLowerCase()),
                     'sq': ARTISTS_SQ.map(a => a.toLowerCase()), 'ee': ARTISTS_EE.map(a => a.toLowerCase()),
                     'lv': ARTISTS_LV.map(a => a.toLowerCase()), 'lt': ARTISTS_LT.map(a => a.toLowerCase()),
                     'md': ARTISTS_MD.map(a => a.toLowerCase()), 'se': ARTISTS_SE.map(a => a.toLowerCase()),
@@ -8111,18 +8155,24 @@ const toggleNotifications = async () => {
                 const globalExceptions = ARTISTS_GLOBAL_EXCEPTIONS.map(a => a.toLowerCase());
                 const allRegionalArtists = Object.values(langMap).flat();
 
+                // Normalizované množiny (bez diakritiky a interpunkce), aby "Tiësto" z Deezeru odpovídalo "Tiesto" v našich seznamech
+                const globalExceptionsNorm = new Set(globalExceptions.map(a => normDeezerName(a)));
+                const allRegionalNorm = new Set(allRegionalArtists.map(a => normDeezerName(a)));
+                const langMapNorm = {};
+                Object.keys(langMap).forEach(lang => { langMapNorm[lang] = new Set(langMap[lang].map(a => normDeezerName(a))); });
+
                 const checkOrigin = (artistName) => {
-                    const lowerName = artistName.toLowerCase();
+                    const normName = normDeezerName(artistName);
                     
                     if (!originFilters || originFilters.length === 0) {
                         // Výchozí "Světový mainstream" (Angličtina + Globální výjimky)
-                        if (globalExceptions.includes(lowerName)) return true;
-                        return !allRegionalArtists.includes(lowerName);
+                        if (globalExceptionsNorm.has(normName)) return true;
+                        return !allRegionalNorm.has(normName);
                     }
                     
                     // Pokud je mezi vybranými jazyky i Angličtina ('en')
-                    const isEnglish = !allRegionalArtists.includes(lowerName);
-                    const isRegionalMatch = originFilters.some(lang => lang !== 'en' && langMap[lang] && langMap[lang].includes(lowerName));
+                    const isEnglish = !allRegionalNorm.has(normName);
+                    const isRegionalMatch = originFilters.some(lang => lang !== 'en' && langMapNorm[lang] && langMapNorm[lang].has(normName));
 
                     if (originFilters.includes('en')) {
                         return isEnglish || isRegionalMatch;
@@ -8256,12 +8306,14 @@ const toggleNotifications = async () => {
 
                     const validSongs = (data.data || []).filter(track => {
                         if (!track || !track.preview || track.type !== 'track' || !track.artist || !track.artist.name || !track.title) return false;
-                        if (forbiddenCharsPattern.test(track.artist.name) || forbiddenCharsPattern.test(track.title)) return false;
+                        // U konkrétně vybraného interpreta nevyřazujeme znaky jako å/ł (jinak by Måneskin či Dawid Podsiadło nikdy nehráli)
+                        if (mode !== 'artist' && (forbiddenCharsPattern.test(track.artist.name) || forbiddenCharsPattern.test(track.title))) return false;
                         
                         const aName = track.artist.name.toLowerCase();
+                        const aNorm = normDeezerName(track.artist.name);
                         const tName = track.title.toLowerCase();
                         
-                        if (aName.includes('karaoke') || aName.includes('tribute') || tName.includes('karaoke') || aName.includes('cover') || aName.includes('deezer') || aName.includes('sound') || tName.includes('sleep') || tName.includes('rain') || tName.includes('noise')) return false;
+                        if (isJunkTrack(track.artist.name, track.title)) return false;
 
                         // --- FILTR POPULARITY (Hit Filter) ---
                         const isCzSk = ARTISTS_CZ.map(a=>a.toLowerCase()).includes(aName) || ARTISTS_SK.map(a=>a.toLowerCase()).includes(aName);
@@ -8317,17 +8369,17 @@ const toggleNotifications = async () => {
                         // -------------------------------------
                         
                         if (mode === 'artist' && specificArtist && specificArtist.length > 0) {
-                            const isOneOfSelected = specificArtist.some(a => a.toLowerCase() === aName);
+                            const isOneOfSelected = specificArtist.some(a => normDeezerName(a) === aNorm);
                             if (!isOneOfSelected) return false;
                         } else if (mode === 'genre' && specificArtist && specificArtist.length > 0) {
                             let possibleArtists = [];
-                            specificArtist.forEach(g => { if (GENRES_DATA[g]) possibleArtists.push(...GENRES_DATA[g].map(x => x.toLowerCase())); });
-                            if (!possibleArtists.includes(aName)) return false;
+                            specificArtist.forEach(g => { if (GENRES_DATA[g]) possibleArtists.push(...GENRES_DATA[g].map(x => normDeezerName(x))); });
+                            if (!possibleArtists.includes(aNorm)) return false;
                         } else if (mode === 'combo' && specificArtist?.genres?.length > 0) {
                             // U kombinace musíme také zkontrolovat, zda vybraná písnička patří interpretovi ze zvoleného žánru
                             let possibleArtists = [];
-                            specificArtist.genres.forEach(g => { if (GENRES_DATA[g]) possibleArtists.push(...GENRES_DATA[g].map(x => x.toLowerCase())); });
-                            if (!possibleArtists.includes(aName)) return false;
+                            specificArtist.genres.forEach(g => { if (GENRES_DATA[g]) possibleArtists.push(...GENRES_DATA[g].map(x => normDeezerName(x))); });
+                            if (!possibleArtists.includes(aNorm)) return false;
                         } else {
                                     // OPRAVA: V náhodném mixu s vybraným jazykem musíme ověřit, že výsledek do jazyka opravdu patří
                                     if (originFilters && originFilters.length > 0) {
@@ -8566,6 +8618,14 @@ const handleRandomChallenge = () => {
 };
             const challengeOpponent = async (opponentEmail, rematchGame = null) => {
                 if (!opponentEmail || !opponentEmail.trim() || !user || !myProfile) return;
+                // Stejná kontrola jako u tlačítek formuláře (výzva z profilu soupeře ji dřív obcházela)
+                if (!rematchGame) {
+                    const missingSelection = (challengeMode === 'artist' && selectedArtists.length === 0) ||
+                        (challengeMode === 'genre' && selectedGenres.length === 0) ||
+                        (challengeMode === 'decade' && selectedDecades.length === 0) ||
+                        (challengeMode === 'combo' && (selectedGenres.length === 0 || selectedDecades.length === 0));
+                    if (missingSelection) { setError(t.errNoSelection); return; }
+                }
                 setError(null); setIsLoading(true); setStatusMsg(t.msgFind(opponentEmail));
                 
                 // Zjištění nastavení: Pokud je to odveta, vezmi staré. Jinak vezmi aktuální z UI.
@@ -8601,7 +8661,9 @@ const handleRandomChallenge = () => {
                         gameMode: useMode,
                         targetArtist: useArtist,
                         previewDuration: useDuration,
-                        hitFilter: useHitFilter, originFilters: useOriginFilters, answerMode: answerMode
+                        hitFilter: useHitFilter, originFilters: useOriginFilters,
+                        // Odveta zachová způsob odpovídání z původní hry (dřív se vzalo aktuální nastavení z UI)
+                        answerMode: rematchGame ? (rematchGame.answerMode || 'choices') : answerMode
                     };
 
                     const gameRef = await api.addDoc(api.collection(db, 'artifacts', appId, 'public', 'data', 'games'), newGame);
@@ -8646,10 +8708,10 @@ const handleRandomChallenge = () => {
                         setArtistGuess(""); setSongGuess(""); setIsRevealed(false); setIsPlaying(false);
                         setGuessResult({ artist: null, song: null, earned: 0 }); 
                         setHintsRemaining(3); setHintUsed(false);
+                        // Vynulování možností jen u nové hry; u rozehrané hry se obnoví z uloženého stavu výše
+                        setEliminatedChoice(null); setSelectedChoice(null);
                     }
                     setCurrentGame(game); setAutoPlayNext(false); setAudioError(false); setView('playing'); 
-                    // OPRAVA: Vynulování možností při spuštění rozehrané hry
-                    setEliminatedChoice(null); setSelectedChoice(null);
                 }
             };
 
@@ -9954,7 +10016,13 @@ const handleRandomChallenge = () => {
                     </div>
                 );
             }
-            return null;
+            // Záchrana: když se nepodaří přihlášení/načtení profilu, nezobrazuj prázdnou stránku, ale chybu s možností zkusit znovu
+            return (
+                <div className="flex flex-col items-center justify-center min-h-[50vh] text-center px-4">
+                    <p className="text-red-300 font-bold mb-4">{error || t.errDB}</p>
+                    <button onClick={() => window.location.reload()} className="px-6 py-3 rounded-xl bg-indigo-500 hover:bg-indigo-400 text-white font-bold">{t.tryAgain}</button>
+                </div>
+            );
         }
 
 // --- HLAVNÍ OBALOVACÍ KOMPONENTA (Menu nahoře) ---
@@ -9969,7 +10037,12 @@ const handleRandomChallenge = () => {
             useEffect(() => { localStorage.setItem('musicQuiz_app_mode', mode); }, [mode]);
             useEffect(() => { localStorage.setItem('musicQuiz_app_lang', appLang); }, [appLang]);
 
-            const t = DICT[appLang] || DICT['en'];
+            // Chybějící texty v některých jazycích doplníme ze záložního jazyka (slovenština z češtiny, ostatní z angličtiny),
+            // aby se v UI neobjevovala prázdná tlačítka (např. názvy jazyků ve filtru interpretů).
+            const t = React.useMemo(() => {
+                const fallback = appLang === 'sk' ? { ...DICT['en'], ...DICT['cs'] } : DICT['en'];
+                return { ...fallback, ...(DICT[appLang] || {}) };
+            }, [appLang]);
 
             return (
                 <div className="flex flex-col min-h-screen">
