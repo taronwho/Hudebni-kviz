@@ -6392,7 +6392,8 @@ const GENRES_DATA = {
             return similarity >= 0.70; 
         };
 
-        const fetchDeezerHit = (term) => {
+        // Obecné JSONP volání Deezer API (path např. "search?q=..." nebo "artist/412/top?limit=100")
+        const deezerJsonp = (path) => {
             return new Promise((resolve) => {
                 const callbackName = 'deezer_' + Math.random().toString(36).substr(2, 9);
                 const script = document.createElement('script');
@@ -6402,11 +6403,66 @@ const GENRES_DATA = {
                     if(document.body.contains(script)) document.body.removeChild(script);
                     delete window[callbackName];
                 };
-                window[callbackName] = (response) => { cleanup(); resolve(response); };
+                window[callbackName] = (response) => { cleanup(); resolve(response || { data: [] }); };
                 script.onerror = () => { cleanup(); resolve({ data: [] }); };
-                script.src = `https://api.deezer.com/search?q=${encodeURIComponent(term)}&limit=100&output=jsonp&callback=${callbackName}`;
+                const sep = path.includes('?') ? '&' : '?';
+                script.src = `https://api.deezer.com/${path}${sep}output=jsonp&callback=${callbackName}`;
                 document.body.appendChild(script);
             });
+        };
+
+        const normDeezerName = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9Ѐ-ӿͰ-Ͽ぀-ヿ一-鿿가-힯]+/g, ' ').trim();
+
+        // Cache: jméno interpreta -> Deezer ID (šetří požadavky)
+        const deezerArtistIdCache = {};
+
+        const fetchArtistTopTracks = async (artistName) => {
+            const key = normDeezerName(artistName);
+            let artistId = deezerArtistIdCache[key];
+            if (!artistId) {
+                const res = await deezerJsonp(`search/artist?q=${encodeURIComponent(artistName)}&limit=10`);
+                const list = (res && res.data) || [];
+                const exact = list.find(a => normDeezerName(a.name) === key);
+                const chosen = exact || list[0];
+                if (!chosen) return [];
+                artistId = chosen.id;
+                deezerArtistIdCache[key] = artistId;
+            }
+            const top = await deezerJsonp(`artist/${artistId}/top?limit=100`);
+            return (top && top.data) || [];
+        };
+
+        // Deezer přestal spolehlivě zpracovávat pokročilé dotazy (artist:"..." album:"..." track:"..."),
+        // proto je překládáme na dotazy, které fungují (top skladby interpreta / běžné hledání + filtr).
+        const fetchDeezerHit = async (term) => {
+            const artistMatch = term.match(/artist:"([^"]+)"/i);
+            if (!artistMatch) {
+                return deezerJsonp(`search?q=${encodeURIComponent(term)}&limit=100`);
+            }
+
+            const artistName = artistMatch[1];
+            const albumMatch = term.match(/album:"([^"]+)"/i);
+            const trackMatch = term.match(/track:"([^"]+)"/i);
+            const artistKey = normDeezerName(artistName);
+            const sameArtist = (t) => t && t.artist && normDeezerName(t.artist.name) === artistKey;
+
+            if (!albumMatch && !trackMatch) {
+                const top = await fetchArtistTopTracks(artistName);
+                if (top.length > 0) return { data: top };
+                const res = await deezerJsonp(`search?q=${encodeURIComponent(artistName)}&limit=100`);
+                return { data: ((res && res.data) || []).filter(sameArtist) };
+            }
+
+            const extra = albumMatch ? albumMatch[1] : trackMatch[1];
+            const res = await deezerJsonp(`search?q=${encodeURIComponent(artistName + ' ' + extra)}&limit=100`);
+            const byArtist = ((res && res.data) || []).filter(sameArtist);
+            if (albumMatch) {
+                const albumKey = normDeezerName(albumMatch[1]);
+                const byAlbum = byArtist.filter(t => t.album && normDeezerName(t.album.title) === albumKey);
+                if (byAlbum.length > 0) return { data: byAlbum };
+            }
+            if (byArtist.length > 0) return { data: byArtist };
+            return { data: await fetchArtistTopTracks(artistName) };
         };
 
         // --- SINGLEPLAYER KOMPONENTA (Trénink) ---
