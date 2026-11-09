@@ -1067,6 +1067,18 @@ const DICT = {
     errGen: "Při vytváření hry nastala chyba.",
     errSelf: "Nemůžeš vyzvat sám sebe!",
     errNoSelection: "Nejdřív v nastavení výzvy vyber interpreta, žánr nebo dekádu.",
+    reportBtn: "Nahlásit",
+    blockBtn: "Blokovat",
+    unblockBtn: "Odblokovat",
+    reportTitle: "Proč hráče nahlašuješ?",
+    reportReasonNick: "Nevhodná přezdívka",
+    reportReasonAvatar: "Nevhodný obrázek / avatar",
+    reportReasonOther: "Jiné nevhodné chování",
+    reportSent: "Děkujeme, nahlášení jsme přijali a prověříme ho.",
+    reportFail: "Nahlášení se nepodařilo odeslat. Zkus to prosím znovu.",
+    blockedInfo: "Hráč je zablokovaný: nemůže tě vyzvat a vaše hry se ti nezobrazují.",
+    errBlocked: "Tohoto hráče teď nelze vyzvat.",
+    blockedListTitle: "Zablokovaní hráči",
     errFound: email => `Hráč "${email}" nebyl nalezen. Zkontroluj překlepy.`,
     msgGen: count => `Generuji ${count} hitů pro tento souboj...`,
     msgFind: email => `Hledám hráče ${email}...`,
@@ -1103,7 +1115,8 @@ const DICT = {
     msgDeleteTitle: "Smazání účtu",
     msgDeleteConfirm: "Opravdu chceš TRVALE smazat svůj účet a veškerou historii? Tuto akci nelze vzít zpět.",
     confirmYes: "Ano, souhlasím",
-    disclaimer: "Vytvořením účtu souhlasíte se Zpracováním osobních údajů (ukládá se pouze přezdívka a skóre). Hudební ukázky poskytuje veřejné API služby Deezer. Aplikace je nekomerční a není se společností Deezer nijak spřízněna.",
+    disclaimer: "Vytvořením účtu souhlasíte se zpracováním osobních údajů (přezdívka, avatar, země, výsledky her; heslo jen v zabezpečené podobě). Hudební ukázky poskytuje veřejné API služby Deezer. Aplikace je nekomerční a není se společností Deezer nijak spřízněna.",
+    privacyLink: "Zásady ochrany osobních údajů",
     randomChallengeBtn: "Vyzvat náhodného hráče",
     errNoActivePlayers: "Nenašli jsme žádného aktivního hráče za posledních 14 dní.",
     hitLevelLabel: "Popularita skladeb:",
@@ -1414,6 +1427,18 @@ const DICT = {
     errGen: "Error occurred while creating the game.",
     errSelf: "You cannot challenge yourself!",
     errNoSelection: "First choose an artist, genre or decade in the challenge settings.",
+    reportBtn: "Report",
+    blockBtn: "Block",
+    unblockBtn: "Unblock",
+    reportTitle: "Why are you reporting this player?",
+    reportReasonNick: "Inappropriate nickname",
+    reportReasonAvatar: "Inappropriate picture / avatar",
+    reportReasonOther: "Other inappropriate behaviour",
+    reportSent: "Thank you, we received your report and will review it.",
+    reportFail: "The report could not be sent. Please try again.",
+    blockedInfo: "This player is blocked: they cannot challenge you and your games are hidden.",
+    errBlocked: "This player cannot be challenged right now.",
+    blockedListTitle: "Blocked players",
     errFound: email => `Player "${email}" not found. Check for typos.`,
     msgGen: count => `Generating ${count} hits for this battle...`,
     msgFind: email => `Searching for player ${email}...`,
@@ -1450,7 +1475,8 @@ const DICT = {
     msgDeleteTitle: "Delete Account",
     msgDeleteConfirm: "Are you sure you want to PERMANENTLY delete your account and all history? This action cannot be undone.",
     confirmYes: "Yes, I agree",
-    disclaimer: "By creating an account, you agree to the Privacy Policy (only nickname and score are stored). Music previews are provided by the public Deezer API. This app is non-commercial and is not affiliated with Deezer.",
+    disclaimer: "By creating an account, you agree to the Privacy Policy (nickname, avatar, country, game results; the password is stored only in secured form). Music previews are provided by the public Deezer API. This app is non-commercial and is not affiliated with Deezer.",
+    privacyLink: "Privacy Policy",
     randomChallengeBtn: "Challenge Random Player",
     errNoActivePlayers: "No active players found in the last 14 days.",
     hitLevelLabel: "Track popularity:",
@@ -1644,6 +1670,18 @@ const DICT = {
     errGen: "Pri vytváraní hry nastala chyba.",
     errSelf: "Nemôžeš vyzvať sám seba!",
     errNoSelection: "Najprv v nastavení výzvy vyber interpreta, žáner alebo dekádu.",
+    reportBtn: "Nahlásiť",
+    blockBtn: "Blokovať",
+    unblockBtn: "Odblokovať",
+    reportTitle: "Prečo hráča nahlasuješ?",
+    reportReasonNick: "Nevhodná prezývka",
+    reportReasonAvatar: "Nevhodný obrázok / avatar",
+    reportReasonOther: "Iné nevhodné správanie",
+    reportSent: "Ďakujeme, nahlásenie sme prijali a preveríme ho.",
+    reportFail: "Nahlásenie sa nepodarilo odoslať. Skús to prosím znova.",
+    blockedInfo: "Hráč je zablokovaný: nemôže ťa vyzvať a vaše hry sa ti nezobrazujú.",
+    errBlocked: "Tohto hráča teraz nemožno vyzvať.",
+    blockedListTitle: "Zablokovaní hráči",
     errFound: email => `Hráč "${email}" nebol nájdený. Skontroluj preklepy.`,
     msgGen: count => `Generujem ${count} hitov pre tento súboj...`,
     msgFind: email => `Hľadám hráča ${email}...`,
@@ -1680,7 +1718,8 @@ const DICT = {
     msgDeleteTitle: "Zmazanie účtu",
     msgDeleteConfirm: "Naozaj chceš TRVALO zmazať svoj účet a celú históriu? Túto akciu nemožno vrátiť späť.",
     confirmYes: "Áno, súhlasím",
-    disclaimer: "Vytvorením účtu súhlasíte so Spracovaním osobných údajov (ukladá sa len prezývka a skóre). Hudobné ukážky poskytuje verejné API služby Deezer. Aplikácia je nekomerčná a nie je so spoločnosťou Deezer nijako spriaznená.",
+    disclaimer: "Vytvorením účtu súhlasíte so spracovaním osobných údajov (prezývka, avatar, krajina, výsledky hier; heslo len v zabezpečenej podobe). Hudobné ukážky poskytuje verejné API služby Deezer. Aplikácia je nekomerčná a nie je so spoločnosťou Deezer nijako spriaznená.",
+    privacyLink: "Zásady ochrany osobných údajov",
     randomChallengeBtn: "Vyzvať náhodného hráča",
     errNoActivePlayers: "Nenašli sme žiadneho aktívneho hráča za posledných 14 dní.",
     hitLevelLabel: "Popularita skladieb:",
@@ -12484,12 +12523,30 @@ const OpponentProfileModal = ({
   allGames,
   allProfiles,
   appLang,
-  t
+  t,
+  myEmail,
+  isBlocked,
+  onToggleBlock,
+  onReport
 }) => {
   const [showEnlargedRank, setShowEnlargedRank] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [reportState, setReportState] = useState(null);
   if (!opponent) return null;
   const opponentEmail = opponent.email;
   const opponentAvatar = opponent.avatar;
+  const isSelf = !!myEmail && opponentEmail?.toLowerCase() === myEmail.toLowerCase();
+  const sendReport = async reason => {
+    setReportState('sending');
+    try {
+      await onReport(opponentEmail, reason);
+      setReportState('sent');
+    } catch (e) {
+      console.error('Nahlášení selhalo', e);
+      setReportState('failed');
+    }
+    setShowReport(false);
+  };
   const oppFinishedGames = allGames.filter(g => {
     const isP1 = g.player1_email?.toLowerCase() === opponentEmail.toLowerCase();
     const isP2 = g.player2_email?.toLowerCase() === opponentEmail.toLowerCase();
@@ -12549,13 +12606,44 @@ const OpponentProfileModal = ({
     className: "text-slate-300 font-medium text-[10px] sm:text-xs bg-black/30 px-2 py-1.5 rounded-md border border-white/10 uppercase tracking-wider"
   }, "\u2694\uFE0F ", appLang === 'cs' || appLang === 'sk' ? 'Zápasů' : 'Matches', ": ", oppTotalGames), React.createElement("span", {
     className: `font-black text-[10px] sm:text-xs px-2 py-1.5 rounded-md border uppercase tracking-wider ${oppWinRate >= 50 ? 'bg-green-500/20 text-green-400 border-green-500/30' : 'bg-red-500/20 text-red-400 border-red-500/30'}`
-  }, "\uD83D\uDD25 Win Rate: ", oppWinRate, "%")), React.createElement("button", {
+  }, "\uD83D\uDD25 Win Rate: ", oppWinRate, "%")), !isSelf && isBlocked && React.createElement("p", {
+    className: "text-amber-300 text-xs mb-4"
+  }, t.blockedInfo), !isSelf && !isBlocked && React.createElement("button", {
     onClick: () => {
       onClose();
       onChallenge();
     },
     className: "w-full bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-500 text-white font-bold py-3 px-6 rounded-xl transition-all hover:scale-105 shadow-lg border border-white/20"
-  }, "\u2694\uFE0F ", t.challengeBtn)))), showEnlargedRank && React.createElement("div", {
+  }, "\u2694\uFE0F ", t.challengeBtn), !isSelf && onToggleBlock && onReport && React.createElement("div", {
+    className: "w-full mt-4"
+  }, React.createElement("div", {
+    className: "flex gap-2"
+  }, React.createElement("button", {
+    type: "button",
+    onClick: () => {
+      setShowReport(v => !v);
+      setReportState(null);
+    },
+    className: "flex-1 py-2 rounded-xl text-xs font-bold bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10"
+  }, "\uD83D\uDEA9 ", t.reportBtn), React.createElement("button", {
+    type: "button",
+    onClick: () => onToggleBlock(opponentEmail),
+    className: "flex-1 py-2 rounded-xl text-xs font-bold bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10"
+  }, "\uD83D\uDEAB ", isBlocked ? t.unblockBtn : t.blockBtn)), showReport && React.createElement("div", {
+    className: "mt-3 p-3 bg-black/30 rounded-xl border border-white/10 text-left"
+  }, React.createElement("p", {
+    className: "text-slate-300 text-xs font-bold mb-2"
+  }, t.reportTitle), [['nickname', t.reportReasonNick], ['avatar', t.reportReasonAvatar], ['other', t.reportReasonOther]].map(([code, label]) => React.createElement("button", {
+    key: code,
+    type: "button",
+    disabled: reportState === 'sending',
+    onClick: () => sendReport(code),
+    className: "w-full text-left text-sm py-2 px-3 mb-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-200"
+  }, label))), reportState === 'sent' && React.createElement("p", {
+    className: "text-emerald-300 text-xs mt-3"
+  }, t.reportSent), reportState === 'failed' && React.createElement("p", {
+    className: "text-red-300 text-xs mt-3"
+  }, t.reportFail))))), showEnlargedRank && React.createElement("div", {
     className: "fixed inset-0 bg-black/90 backdrop-blur-sm z-[400] flex items-center justify-center p-4",
     onClick: () => setShowEnlargedRank(false)
   }, React.createElement("div", {
@@ -15423,6 +15511,38 @@ function MultiplayerDashboard({
     if (finalSongs.length < count) throw new Error(t.errDl);
     return finalSongs;
   };
+  const myBlockedList = (myProfile?.blocked || []).map(x => String(x).toLowerCase());
+  const isBlockedBetween = otherEmail => {
+    const other = String(otherEmail || '').toLowerCase();
+    if (!other || !myProfile) return false;
+    if (myBlockedList.includes(other)) return true;
+    const otherProfile = allProfiles.find(p => (p.email || '').toLowerCase() === other);
+    return !!otherProfile && (otherProfile.blocked || []).map(x => String(x).toLowerCase()).includes((myProfile.email || '').toLowerCase());
+  };
+  const toggleBlockPlayer = async otherEmail => {
+    if (!myProfile || !activeProfileId) return;
+    const other = String(otherEmail || '').toLowerCase();
+    const next = myBlockedList.includes(other) ? myBlockedList.filter(x => x !== other) : [...myBlockedList, other];
+    try {
+      await api.updateDoc(api.doc(db, 'artifacts', appId, 'public', 'data', 'profiles', activeProfileId), {
+        blocked: next
+      });
+    } catch (e) {
+      setError("Chyba ukládání.");
+    }
+  };
+  const reportPlayer = async (otherEmail, reason) => {
+    const reported = allProfiles.find(p => (p.email || '').toLowerCase() === String(otherEmail || '').toLowerCase());
+    await api.addDoc(api.collection(db, 'artifacts', appId, 'public', 'data', 'reports'), {
+      reporter: myProfile?.email || '',
+      reported: otherEmail,
+      reportedProfileId: reported?.id || '',
+      reason,
+      customAvatar: !!(reported?.avatar && String(reported.avatar).startsWith('data:image')),
+      createdAt: Date.now(),
+      status: 'new'
+    });
+  };
   const handleRandomChallenge = () => {
     const now = Date.now();
     const fourteenDaysMs = 14 * 24 * 60 * 60 * 1000;
@@ -15437,7 +15557,7 @@ function MultiplayerDashboard({
         }
       }
     });
-    const opponentsArray = Array.from(activeOpponents);
+    const opponentsArray = Array.from(activeOpponents).filter(e => !isBlockedBetween(e));
     if (opponentsArray.length === 0) {
       setError(t.errNoActivePlayers);
       return;
@@ -15472,6 +15592,7 @@ function MultiplayerDashboard({
       const profilesSnap = await api.getDocs(api.collection(db, 'artifacts', appId, 'public', 'data', 'profiles'));
       const oppProfile = profilesSnap.docs.find(d => d.data().email === cleanEmail) || profilesSnap.docs.find(d => (d.data().email || '').toLowerCase() === cleanEmail);
       if (!oppProfile) throw new Error(t.errFound(cleanEmail));
+      if (isBlockedBetween(oppProfile.data().email)) throw new Error(t.errBlocked);
       setStatusMsg(t.msgGen(useCount));
       const songs = await generateSongs(useMode, useArtist, useCount, useHitFilter, useOriginFilters);
       const newGame = {
@@ -15878,7 +15999,12 @@ function MultiplayerDashboard({
       className: "mt-6 border-t border-white/10 pt-4"
     }, React.createElement("p", {
       className: "text-[10px] text-slate-500 leading-tight"
-    }, t.disclaimer))));
+    }, t.disclaimer), React.createElement("a", {
+      href: "/privacy.html",
+      target: "_blank",
+      rel: "noopener",
+      className: "inline-block mt-2 text-[11px] text-indigo-300 underline"
+    }, t.privacyLink))));
   }
   if (view === 'edit_profile') {
     return React.createElement("div", {
@@ -15945,7 +16071,8 @@ function MultiplayerDashboard({
       const isPlayer1 = g.player1_email === myProfile.email;
       return isPlayer1 ? !g.player1_finished : !g.player2_finished;
     };
-    const filteredGames = games.filter(game => showOnlyMyTurn ? isMyTurn(game) : true);
+    const opponentOf = g => g.player1_email === myProfile.email ? g.player2_email : g.player1_email;
+    const filteredGames = games.filter(game => !myBlockedList.includes(String(opponentOf(game) || '').toLowerCase())).filter(game => showOnlyMyTurn ? isMyTurn(game) : true);
     const displayedGames = filteredGames.slice(0, visibleGamesCount);
     return React.createElement("div", {
       className: "max-w-2xl mx-auto p-4 py-8 mt-2 sm:mt-12 relative"
@@ -15977,7 +16104,11 @@ function MultiplayerDashboard({
       allGames: allGames,
       allProfiles: allProfiles,
       appLang: appLang,
-      t: t
+      t: t,
+      myEmail: myProfile?.email,
+      isBlocked: !!selectedOpponent && myBlockedList.includes((selectedOpponent.email || '').toLowerCase()),
+      onToggleBlock: toggleBlockPlayer,
+      onReport: reportPlayer
     }), showEnlargedMyRank && myProfile && (() => {
       const myFinishedGamesList = allGames.filter(g => {
         const isP1 = g.player1_email?.toLowerCase() === myProfile?.email?.toLowerCase();
@@ -16691,7 +16822,20 @@ function MultiplayerDashboard({
     }), filteredGames.length > visibleGamesCount && React.createElement("button", {
       onClick: () => setVisibleGamesCount(prev => prev + 10),
       className: "mt-6 w-full py-3.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-bold transition-all border border-white/10 shadow-sm flex items-center justify-center gap-2"
-    }, getUIString(appLang, 'loadOlder'), " ", React.createElement("span", null, "\u2193"))));
+    }, getUIString(appLang, 'loadOlder'), " ", React.createElement("span", null, "\u2193")), myBlockedList.length > 0 && React.createElement("div", {
+      className: "mt-6 p-3 rounded-xl bg-black/20 border border-white/10"
+    }, React.createElement("p", {
+      className: "text-slate-400 text-xs font-bold mb-2 uppercase tracking-wider"
+    }, "\uD83D\uDEAB ", t.blockedListTitle), myBlockedList.map(email => React.createElement("div", {
+      key: email,
+      className: "flex items-center justify-between py-1"
+    }, React.createElement("span", {
+      className: "text-slate-300 text-sm truncate"
+    }, email), React.createElement("button", {
+      type: "button",
+      onClick: () => toggleBlockPlayer(email),
+      className: "text-xs font-bold px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10"
+    }, t.unblockBtn))))));
   }
   if (view === 'results') {
     const isPlayer1 = currentGame.player1_email === myProfile.email;

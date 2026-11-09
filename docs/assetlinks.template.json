@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cz.hudebnikviz.app",
+      "sha256_cert_fingerprints": [
+        "OTISK_Z_PWABUILDERU (signing-key-info.txt)",
+        "OTISK_KLICE_GOOGLE_PLAY (Play Console -> Integrita aplikace -> Podepisování aplikací)"
+      ]
+    }
+  }
+]

@@ -7,7 +7,7 @@ Statická webová aplikace (React + Firebase Firestore + Deezer API), nasazovan�
 - `index.html`, `app.js`, `app.css` v kořeni – **vygenerované** příkazem `cd tools && npm install && npm run build`. Needitovat ručně; po každé změně `src/index.html` znovu sestavit a commitnout i vygenerované soubory.
 - `tools/` – sestavovací skript (Babel pro JSX, Tailwind CLI v3). `package.json` je schválně v `tools/`, aby ho Netlify nenašel a nespouštěl instalaci.
 - `profiles/`, `presets/`, `ranks/` – obrázky; `firebase-messaging-sw.js` – service worker pro notifikace.
-- `privacy.html`, `.well-known/assetlinks.json`, `docs/` – podklady pro Google Play.
+- `privacy.html` (zásady ochrany osobních údajů), `docs/google-play.md` (postup vydání), `docs/play/` (grafika do obchodu), `docs/assetlinks.template.json` (po vytvoření aplikace patří vyplněný do `.well-known/assetlinks.json`).
 
 ## Data a kompatibilita (důležité – aplikaci aktivně hraje hodně hráčů)
 - Firestore cesta `artifacts/music-quiz-netlify/public/data/{profiles,games}` se nesmí měnit.
