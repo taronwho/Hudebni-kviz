@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zásady ochrany osobních údajů – Hudební Kvíz</title>
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" href="/icon-192.png">
+    <style>
+        :root { color-scheme: dark; }
+        body { margin: 0; background: #0f172a; color: #e2e8f0; font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+        main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+        h1 { font-size: 1.8rem; line-height: 1.25; margin: 0 0 4px; color: #fff; }
+        h2 { font-size: 1.2rem; margin: 32px 0 8px; color: #f9a8d4; }
+        h3 { font-size: 1.05rem; margin: 20px 0 6px; color: #c7d2fe; }
+        a { color: #a5b4fc; }
+        .muted { color: #94a3b8; font-size: .9rem; }
+        .box { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 12px 16px; margin: 12px 0; }
+        ul { padding-left: 1.2rem; }
+        li { margin: 4px 0; }
+        hr { border: 0; border-top: 1px solid rgba(255,255,255,.15); margin: 48px 0; }
+        nav a { margin-right: 12px; }
+    </style>
+</head>
+<body>
+<main>
+    <nav class="muted"><a href="#cs">Čeština</a><a href="#en">English</a><a href="/">← Zpět do hry</a></nav>
+
+    <section id="cs" lang="cs">
+        <h1>Zásady ochrany osobních údajů</h1>
+        <p class="muted">Aplikace Hudební Kvíz · platné od 9. 11. 2026</p>
+
+        <p>Hudební Kvíz je nekomerční hra, ve které hádáš písničky podle krátkých ukázek, sám nebo v soubojích s přáteli. Neobsahuje reklamy, nesleduje tě analytickými nástroji a tvoje údaje nikomu neprodáváme.</p>
+
+        <h2>Kdo údaje zpracovává</h2>
+        <p>Správcem je provozovatel aplikace Hudební Kvíz. Kontakt: <strong>[DOPLŇTE KONTAKTNÍ E-MAIL]</strong>.</p>
+
+        <h2>Jaké údaje ukládáme</h2>
+        <h3>Když hraješ s přáteli (účet)</h3>
+        <ul>
+            <li><strong>Přezdívka</strong> – vidí ji ostatní hráči (výzvy, žebříček).</li>
+            <li><strong>Heslo</strong> – ukládá se jen jako kryptografický otisk (hash), nikdy v čitelné podobě.</li>
+            <li><strong>Avatar</strong> – obrázek z nabídky, nebo vlastní obrázek, který nahraješ. Vidí ho ostatní hráči.</li>
+            <li><strong>Země</strong> – kterou si sám vybereš; zobrazuje se u přezdívky jako vlajka.</li>
+            <li><strong>Hry</strong> – s kým hraješ, skladby ve hře, tvoje odpovědi, skóre a čas. Vidí je oba hráči dané hry; počty výher se zobrazují v žebříčku.</li>
+            <li><strong>Blokování a nahlášení</strong> – seznam hráčů, které jsi zablokoval, a nahlášení nevhodného obsahu, která odešleš.</li>
+            <li><strong>Technické údaje</strong> – anonymní identifikátor přihlášení (Firebase) a, pokud zapneš upozornění, identifikátor pro zasílání notifikací.</li>
+        </ul>
+        <h3>Jen v tvém zařízení</h3>
+        <p>Nastavení (jazyk, režim, délka ukázky), skóre z tréninku a stav rozehrané hry se ukládají jen v prohlížeči tvého zařízení (localStorage) a nikam se neodesílají.</p>
+
+        <h2>K čemu údaje slouží</h2>
+        <ul>
+            <li>provoz hry – výzvy, výsledky, žebříček a upozornění, že jsi na tahu,</li>
+            <li>ochrana tvého účtu (přihlášení přezdívkou a heslem i na jiném zařízení),</li>
+            <li>řešení nahlášeného nevhodného obsahu.</li>
+        </ul>
+        <p>Právním základem je plnění služby, o kterou žádáš (hra a účet), a u upozornění tvůj souhlas, který můžeš kdykoli vypnout v aplikaci.</p>
+
+        <h2>Kde jsou údaje uložené a kdo je vidí</h2>
+        <ul>
+            <li><strong>Google Firebase</strong> (Firestore, Authentication, Cloud Messaging) – databáze a notifikace. Údaje může Google zpracovávat i mimo EU na základě standardních smluvních doložek. Viz <a href="https://firebase.google.com/support/privacy" rel="noopener">ochrana soukromí ve Firebase</a>.</li>
+            <li><strong>Deezer</strong> – hudební ukázky a obaly alb se načítají přímo ze serverů služby Deezer. Deezer tak vidí tvou IP adresu a technické údaje prohlížeče. Aplikace není se společností Deezer nijak spřízněna.</li>
+            <li><strong>YouTube Music</strong> – jen pokud klikneš na odkaz „Poslechnout celé“, otevře se web YouTube Music.</li>
+        </ul>
+
+        <h2>Jak dlouho údaje uchováváme</h2>
+        <p>Údaje účtu uchováváme, dokud účet nesmažeš. Po smazání účtu se odstraní tvůj profil (přezdívka, heslo, avatar, země, nastavení upozornění). Záznamy již odehraných her zůstávají kvůli statistikám tvých soupeřů a obsahují tvou přezdívku a skóre – na požádání je anonymizujeme.</p>
+
+        <h2 id="smazani-uctu">Jak smazat účet a data</h2>
+        <div class="box">
+            <p><strong>V aplikaci:</strong> otevři záložku <em>Hra s přáteli</em> → klepni na svůj avatar → <em>Úprava profilu</em> → <em>Smazat účet a data</em> → potvrď.</p>
+            <p><strong>Bez aplikace:</strong> napiš na <strong>[DOPLŇTE KONTAKTNÍ E-MAIL]</strong> svou přezdívku a požadavek na smazání. Účet smažeme a záznamy her anonymizujeme do 30 dnů.</p>
+        </div>
+
+        <h2>Tvoje práva</h2>
+        <p>Máš právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Stížnost můžeš podat u <a href="https://uoou.gov.cz" rel="noopener">Úřadu pro ochranu osobních údajů</a>.</p>
+
+        <h2>Věk</h2>
+        <p>Účet pro hru s přáteli je určen uživatelům od 15 let. Mladší hráči mohou účet používat jen se souhlasem rodiče. Trénink funguje i bez účtu.</p>
+
+        <h2>Bezpečnost</h2>
+        <p>Spojení s aplikací je šifrované (HTTPS) a hesla ukládáme jen jako otisk. Přesto prosím nepoužívej heslo, které máš i jinde.</p>
+
+        <h2>Změny</h2>
+        <p>Pokud se tyto zásady změní, aktualizujeme datum nahoře a podstatné změny oznámíme v aplikaci.</p>
+    </section>
+
+    <hr>
+
+    <section id="en" lang="en">
+        <h1>Privacy Policy</h1>
+        <p class="muted">Hudební Kvíz (Music Quiz) · effective 9 November 2026</p>
+
+        <p>Hudební Kvíz is a non-commercial game where you guess songs from short previews, alone or in challenges with friends. It shows no ads, uses no analytics trackers, and we do not sell your data.</p>
+
+        <h2>Controller</h2>
+        <p>The operator of the Hudební Kvíz app. Contact: <strong>[ADD CONTACT E-MAIL]</strong>.</p>
+
+        <h2>Data we store</h2>
+        <h3>When you play with friends (account)</h3>
+        <ul>
+            <li><strong>Nickname</strong> – visible to other players (challenges, leaderboard).</li>
+            <li><strong>Password</strong> – stored only as a cryptographic hash, never in readable form.</li>
+            <li><strong>Avatar</strong> – a picture from the app, or a custom picture you upload. Visible to other players.</li>
+            <li><strong>Country</strong> – chosen by you, shown as a flag next to your nickname.</li>
+            <li><strong>Games</strong> – opponents, songs, your answers, scores and time. Visible to both players of the game; win counts appear in the leaderboard.</li>
+            <li><strong>Blocking and reports</strong> – players you blocked and reports of inappropriate content you send.</li>
+            <li><strong>Technical data</strong> – an anonymous sign-in identifier (Firebase) and, if you enable notifications, a push notification token.</li>
+        </ul>
+        <h3>Only on your device</h3>
+        <p>Settings, practice score and the state of a game in progress are kept only in your browser's local storage and are not sent anywhere.</p>
+
+        <h2>Purposes</h2>
+        <p>Running the game (challenges, results, leaderboard, "your turn" notifications), protecting your account, and handling reports of inappropriate content. Legal basis: providing the service you request; for notifications, your consent, which you can withdraw in the app at any time.</p>
+
+        <h2>Where data is stored and who sees it</h2>
+        <ul>
+            <li><strong>Google Firebase</strong> (Firestore, Authentication, Cloud Messaging). Google may process data outside the EU under standard contractual clauses. See <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase privacy</a>.</li>
+            <li><strong>Deezer</strong> – song previews and album covers are loaded directly from Deezer's servers, so Deezer sees your IP address and technical browser data. The app is not affiliated with Deezer.</li>
+            <li><strong>YouTube Music</strong> – only if you tap the "Listen to the full song" link.</li>
+        </ul>
+
+        <h2>Retention</h2>
+        <p>Account data is kept until you delete your account. Deleting the account removes your profile (nickname, password, avatar, country, notification settings). Records of games already played remain for your opponents' statistics and contain your nickname and score; we anonymize them on request.</p>
+
+        <h2 id="delete-account">How to delete your account and data</h2>
+        <div class="box">
+            <p><strong>In the app:</strong> open <em>Play with friends</em> → tap your avatar → <em>Edit profile</em> → <em>Delete account and data</em> → confirm.</p>
+            <p><strong>Without the app:</strong> e-mail <strong>[ADD CONTACT E-MAIL]</strong> with your nickname and a deletion request. We delete the account and anonymize game records within 30 days.</p>
+        </div>
+
+        <h2>Your rights</h2>
+        <p>You have the right to access, rectify and erase your data, to restrict processing, to data portability and to object. You may lodge a complaint with a data protection authority (in the Czech Republic: <a href="https://uoou.gov.cz" rel="noopener">ÚOOÚ</a>).</p>
+
+        <h2>Age</h2>
+        <p>Accounts for playing with friends are intended for users aged 15 and over; younger players only with a parent's consent. Practice mode works without an account.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, we update the date above and announce significant changes in the app.</p>
+    </section>
+</main>
+</body>
+</html>

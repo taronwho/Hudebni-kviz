@@ -1,0 +1,13 @@
+{
+  "name": "hudebni-kviz-build",
+  "private": true,
+  "description": "Sestavení Hudebního kvízu: src/index.html -> index.html + app.js + app.css v kořeni repozitáře",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@babel/core": "7.26.0",
+    "@babel/preset-react": "7.26.3",
+    "tailwindcss": "3.4.17"
+  }
+}
